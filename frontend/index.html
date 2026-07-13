@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>DentalPose</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="error-banner" class="banner hidden"></div>
+
+<!-- صفحه‌ی اول: اسم دکتر -->
+<div id="name-screen" class="screen">
+  <div class="card">
+    <h1>DentalPose</h1>
+    <p class="subtitle">Enter your name to begin</p>
+    <input id="doctor-name-input" type="text" placeholder="Doctor's name" autocomplete="off">
+    <button id="doctor-name-submit" class="btn-primary">Continue</button>
+  </div>
+</div>
+
+<!-- صفحه‌ی کالیبراسیون -->
+<div id="calib-screen" class="screen hidden">
+  <div class="card">
+    <h2>Calibrating</h2>
+    <p id="calib-text" class="subtitle">Sit in your normal posture and hold still...</p>
+    <div class="progress-track"><div id="calib-bar" class="progress-fill"></div></div>
+  </div>
+</div>
+
+<!-- صفحه‌ی مانیتورینگ -->
+<div id="monitor-screen" class="screen hidden">
+  <div id="stale-notice" class="notice hidden"></div>
+
+  <div class="video-wrap">
+    <video id="video" playsinline muted></video>
+    <canvas id="overlay"></canvas>
+  </div>
+
+  <div class="topbar">
+    <span id="doctor-lbl" class="doctor-name"></span>
+    <span id="status-lbl" class="status-dim">—</span>
+  </div>
+
+  <div class="metrics">
+    <div class="metric-card"><span class="metric-label">Hip</span><span id="metric-hip" class="metric-dim">—</span></div>
+    <div class="metric-card"><span class="metric-label">Knee</span><span id="metric-knee" class="metric-dim">—</span></div>
+    <div class="metric-card"><span class="metric-label">Neck</span><span id="metric-neck" class="metric-dim">—</span></div>
+    <div class="metric-card"><span class="metric-label">Chin</span><span id="metric-chin" class="metric-dim">—</span></div>
+    <div class="metric-card"><span class="metric-label">Shoulder</span><span id="metric-shoulder" class="metric-dim">—</span></div>
+  </div>
+
+  <div class="controls">
+    <button id="report-btn" class="btn-secondary">📄 Report</button>
+    <button id="recalib-btn" class="btn-secondary">↻ Recalibrate</button>
+    <button id="start-btn" class="btn-primary">▶  Start Session</button>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
