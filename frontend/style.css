@@ -1,0 +1,56 @@
+:root {
+  --bg: #0f1115; --bg2: #171a21; --bg3: #1f232c; --card: #171a21;
+  --text: #eef1f5; --text-dim: #8a92a3;
+  --teal: #00D4AA; --teal-dim: #00a884; --danger: #FF4B4B; --warn: #FFB347;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  height: 100%; overflow-x: hidden; }
+
+.hidden { display: none !important; }
+
+.banner { position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--danger); color: white; padding: 12px 16px; text-align: center; font-size: 14px; }
+
+.screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+
+.card { background: var(--card); border-radius: 16px; padding: 32px 24px; max-width: 380px; width: 100%; text-align: center; }
+.card h1 { margin: 0 0 4px; font-size: 26px; }
+.card h2 { margin: 0 0 4px; font-size: 20px; }
+.subtitle { color: var(--text-dim); font-size: 14px; margin-bottom: 20px; }
+
+input[type="text"] { width: 100%; padding: 14px; border-radius: 10px; border: 1px solid var(--bg3);
+  background: var(--bg3); color: var(--text); font-size: 16px; margin-bottom: 14px; }
+
+.btn-primary { width: 100%; padding: 14px; border-radius: 10px; border: none;
+  background: var(--teal); color: #06110d; font-weight: 700; font-size: 15px; cursor: pointer; }
+.btn-secondary { padding: 10px 14px; border-radius: 10px; border: none;
+  background: var(--bg3); color: var(--text-dim); font-size: 13px; cursor: pointer; }
+
+.progress-track { height: 8px; background: var(--bg3); border-radius: 4px; overflow: hidden; margin-top: 10px; }
+.progress-fill { height: 100%; width: 0%; background: var(--teal); transition: width 0.2s linear; }
+
+.notice { background: #2a2412; color: var(--warn); padding: 10px 16px; font-size: 13px; text-align: center; }
+
+.video-wrap { position: relative; width: 100%; max-width: 480px; margin: 0 auto; aspect-ratio: 3/4;
+  background: black; border-radius: 0 0 16px 16px; overflow: hidden; }
+#video { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+#overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: scaleX(-1); }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; max-width: 480px; margin: 0 auto; }
+.doctor-name { font-weight: 600; }
+.status-good { color: var(--teal); font-weight: 700; }
+.status-bad { color: var(--danger); font-weight: 700; }
+.status-dim { color: var(--text-dim); font-weight: 700; }
+
+.metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; padding: 0 16px; max-width: 480px; margin: 0 auto; }
+.metric-card { background: var(--bg2); border-radius: 10px; padding: 8px 4px; text-align: center; display: flex; flex-direction: column; gap: 2px; }
+.metric-label { font-size: 10px; color: var(--text-dim); }
+.metric-good { color: var(--teal); font-weight: 700; font-size: 13px; }
+.metric-bad { color: var(--danger); font-weight: 700; font-size: 13px; }
+.metric-dim { color: var(--text-dim); font-weight: 700; font-size: 13px; }
+
+.controls { display: flex; gap: 8px; padding: 16px; max-width: 480px; margin: 0 auto; }
+.controls .btn-primary { flex: 2; }
+.controls .btn-secondary { flex: 1; }
